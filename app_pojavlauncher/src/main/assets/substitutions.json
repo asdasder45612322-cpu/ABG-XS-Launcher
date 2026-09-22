@@ -2478,5 +2478,113 @@
     "org.lwjgl:lwjgl-stb:3.1.2": "org.lwjgl:lwjgl-stb:3.2.3",
     "org.lwjgl:lwjgl-stb:3.2.2": "org.lwjgl:lwjgl-stb:3.2.3",
     "org.lwjgl.lwjgl:lwjgl-platform:2.9.1-nightly-20131120": "org.lwjgl.lwjgl:lwjgl-platform:2.9.4-mojo"
+  },
+  "org.lwjgl:lwjgl:3.4.3": {
+    "name": "org.lwjgl:lwjgl:3.4.3",
+    "downloads": {
+      "artifact": {
+        "path": "org/lwjgl/lwjgl/3.4.3/lwjgl-3.4.3.jar",
+        "url": "https://github.com/MojoLauncher/unilwjgl3-builder/releases/download/v3.4.3-r6/lwjgl-3.4.3.jar"
+      }
+    }
+  },
+  "org.lwjgl:lwjgl-glfw:3.4.3": {
+    "name": "org.lwjgl:lwjgl-glfw:3.4.3",
+    "downloads": {
+      "artifact": {
+        "path": "org/lwjgl/lwjgl-glfw/3.4.3/lwjgl-glfw-3.4.3.jar",
+        "url": "https://github.com/MojoLauncher/unilwjgl3-builder/releases/download/v3.4.3-r6/lwjgl-glfw-3.4.3.jar"
+      }
+    }
+  },
+  "org.lwjgl:lwjgl-opengl:3.4.3": {
+    "name": "org.lwjgl:lwjgl-opengl:3.4.3",
+    "downloads": {
+      "artifact": {
+        "path": "org/lwjgl/lwjgl-opengl/3.4.3/lwjgl-opengl-3.4.3.jar",
+        "url": "https://github.com/MojoLauncher/unilwjgl3-builder/releases/download/v3.4.3-r6/lwjgl-opengl-3.4.3.jar"
+      }
+    }
+  },
+  "org.lwjgl:lwjgl-openal:3.4.3": {
+    "name": "org.lwjgl:lwjgl-openal:3.4.3",
+    "downloads": {
+      "artifact": {
+        "path": "org/lwjgl/lwjgl-openal/3.4.3/lwjgl-openal-3.4.3.jar",
+        "url": "https://github.com/MojoLauncher/unilwjgl3-builder/releases/download/v3.4.3-r6/lwjgl-openal-3.4.3.jar"
+      }
+    }
+  },
+  "org.lwjgl:lwjgl-freetype:3.4.3": {
+    "name": "org.lwjgl:lwjgl-freetype:3.4.3",
+    "downloads": {
+      "artifact": {
+        "path": "org/lwjgl/lwjgl-freetype/3.4.3/lwjgl-freetype-3.4.3.jar",
+        "url": "https://github.com/MojoLauncher/unilwjgl3-builder/releases/download/v3.4.3-r6/lwjgl-freetype-3.4.3.jar"
+      }
+    }
+  },
+  "org.lwjgl:lwjgl-stb:3.4.3": {
+    "name": "org.lwjgl:lwjgl-stb:3.4.3",
+    "downloads": {
+      "artifact": {
+        "path": "org/lwjgl/lwjgl-stb/3.4.3/lwjgl-stb-3.4.3.jar",
+        "url": "https://github.com/MojoLauncher/unilwjgl3-builder/releases/download/v3.4.3-r6/lwjgl-stb-3.4.3.jar"
+      }
+    }
+  },
+  "org.lwjgl:lwjgl-tinyfd:3.4.3": {
+    "name": "org.lwjgl:lwjgl-tinyfd:3.4.3",
+    "downloads": {
+      "artifact": {
+        "path": "org/lwjgl/lwjgl-tinyfd/3.4.3/lwjgl-tinyfd-3.4.3.jar",
+        "url": "https://github.com/MojoLauncher/unilwjgl3-builder/releases/download/v3.4.3-r6/lwjgl-tinyfd-3.4.3.jar"
+      }
+    }
+  },
+  "org.lwjgl:lwjgl-jemalloc:3.4.3": {
+    "name": "org.lwjgl:lwjgl-jemalloc:3.4.3",
+    "downloads": {
+      "artifact": {
+        "path": "org/lwjgl/lwjgl-jemalloc/3.4.3/lwjgl-jemalloc-3.4.3.jar",
+        "url": "https://github.com/MojoLauncher/unilwjgl3-builder/releases/download/v3.4.3-r6/lwjgl-jemalloc-3.4.3.jar"
+      }
+    }
+  },
+  "org.lwjgl:lwjgl-xxhash:3.4.3": {
+    "name": "org.lwjgl:lwjgl-xxhash:3.4.3",
+    "downloads": {
+      "artifact": {
+        "path": "org/lwjgl/lwjgl-xxhash/3.4.3/lwjgl-xxhash-3.4.3.jar",
+        "url": "https://github.com/MojoLauncher/unilwjgl3-builder/releases/download/v3.4.3-r6/lwjgl-xxhash-3.4.3.jar"
+      }
+    }
+  },
+  "org.lwjgl:lwjgl-zstd:3.4.3": {
+    "name": "org.lwjgl:lwjgl-zstd:3.4.3",
+    "downloads": {
+      "artifact": {
+        "path": "org/lwjgl/lwjgl-zstd/3.4.3/lwjgl-zstd-3.4.3.jar",
+        "url": "https://github.com/MojoLauncher/unilwjgl3-builder/releases/download/v3.4.3-r6/lwjgl-zstd-3.4.3.jar"
+      }
+    }
+  },
+  "org.lwjgl:lwjgl-spng:3.4.3": {
+    "name": "org.lwjgl:lwjgl-spng:3.4.3",
+    "downloads": {
+      "artifact": {
+        "path": "org/lwjgl/lwjgl-spng/3.4.3/lwjgl-spng-3.4.3.jar",
+        "url": "https://github.com/MojoLauncher/unilwjgl3-builder/releases/download/v3.4.3-r6/lwjgl-spng-3.4.3.jar"
+      }
+    }
+  },
+  "org.lwjgl:lwjgl-vulkan:3.4.3": {
+    "name": "org.lwjgl:lwjgl-vulkan:3.4.3",
+    "downloads": {
+      "artifact": {
+        "path": "org/lwjgl/lwjgl-vulkan/3.4.3/lwjgl-vulkan-3.4.3.jar",
+        "url": "https://github.com/MojoLauncher/unilwjgl3-builder/releases/download/v3.4.3-r6/lwjgl-vulkan-3.4.3.jar"
+      }
+    }
   }
 }
