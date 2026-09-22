@@ -1,8 +1,6 @@
 {
   "libraries": {
-    "org.lwjgl:lwjgl-opengl:3.4.1:natives-linux-arm64": {
-      "skip": true
-    },
+
     "org.lwjgl:lwjgl-glfw:3.3.6": {
       "name": "org.lwjgl:lwjgl-glfw:3.3.6",
       "downloads": {

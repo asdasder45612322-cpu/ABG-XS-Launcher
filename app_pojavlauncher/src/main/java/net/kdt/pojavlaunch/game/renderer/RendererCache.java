@@ -42,7 +42,9 @@ public class RendererCache {
         Resources resources = context.getResources();
         // This is the list that controls em all!
         String[] renderers = {
-                GL4ES_RENDERER, ZINK_RENDERER, LTW_RENDERER
+                GL4ES_RENDERER,
+                ZINK_RENDERER,
+                LTW_RENDERER
         };
         ArrayList<String> rendererIds = new ArrayList<>(renderers.length);
         ArrayList<String> rendererNames = new ArrayList<>(rendererIds);

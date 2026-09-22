@@ -47,7 +47,7 @@ public abstract class GLESRenderSpec implements RenderSpec {
             return JREUtils.getDetectedVersion() >= 3 && new File(Tools.NATIVE_LIB_DIR, this.library()).exists();
         }
         public String name() {
-            return "OpenLTW";
+            return "LTW";
         }
         public int displayName() {
             return R.string.mcl_setting_renderer_ltw;
@@ -60,6 +60,13 @@ public abstract class GLESRenderSpec implements RenderSpec {
         }
         protected int glesVersion() {
             return 3;
+        }
+
+        @Override
+        public void setupEnvironment(Context context, Map<String, String> envMap) {
+            super.setupEnvironment(context, envMap);
+            envMap.put("LIBGL_ES", "3");
+            envMap.put("POJAVEXEC_EGL", "libltw.so");
         }
     }
 
