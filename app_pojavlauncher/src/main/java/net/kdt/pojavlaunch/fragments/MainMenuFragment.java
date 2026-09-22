@@ -65,8 +65,23 @@ public class MainMenuFragment extends Fragment {
         mDiscordButton.setOnClickListener(v -> Tools.openURL(requireActivity(), getString(R.string.social_media_invite)));
         mCustomControlButton.setOnClickListener(v -> startActivity(new Intent(requireContext(), CustomControlsActivity.class)));
         mPvpButton.setOnClickListener(v -> {
-            boolean enabled = PvpManager.toggle(requireContext());
-            mPvpButton.setAlpha(enabled ? 1.0f : 0.55f);
+            new AlertDialog.Builder(requireContext())
+                    .setTitle("PVP")
+                    .setMessage(PvpManager.isEnabled(requireContext())
+                            ? "حالة PVP: يعمل"
+                            : "حالة PVP: متوقف")
+                    .setPositiveButton("تشغيل PVP", (dialog, which) -> {
+                        PvpManager.enable(requireContext());
+                        mPvpButton.setAlpha(1.0f);
+                        Toast.makeText(requireContext(), "تم تشغيل PVP", Toast.LENGTH_SHORT).show();
+                    })
+                    .setNegativeButton("إزالة PVP", (dialog, which) -> {
+                        PvpManager.disable(requireContext());
+                        mPvpButton.setAlpha(0.55f);
+                        Toast.makeText(requireContext(), "تم إيقاف PVP", Toast.LENGTH_SHORT).show();
+                    })
+                    .setNeutralButton("إغلاق", null)
+                    .show();
         });
 
         mInstallJarButton.setOnClickListener(v -> runInstallerWithConfirmation());
