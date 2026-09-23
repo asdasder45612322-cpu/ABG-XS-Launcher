@@ -220,24 +220,47 @@ public class GameRunner {
 
         RenderSpec renderer = gameRenderer.getCurrentRenderer();
 
-        // Switch renderer to GL4ES when running a compat context version on LTW
-        if(isCompatContext(versionInfo) && !hasAngelica(gamedir) && renderer instanceof GLESRenderSpec.LTWRenderSpec) {
-            switchRendererIfSupported(true, GameRenderer.getKnownRenderer(Renderers.GL4ES_RENDERER), gameRenderer, instance, activity, 0);
-        }
+        /*
+         * Renderer selection is based on the Minecraft version, not on Sodium.
+         *
+         * Legacy versions use the GLES2/GL4ES path.
+         * Modern OpenGL versions use LTW when the user selected GL4ES.
+         * Other explicitly selected renderers (Zink, MobileGlues, etc.) are left alone.
+         */
 
-        boolean isGl4es = renderer instanceof GLESRenderSpec.GL4ESRenderSpec;
         RenderSpec ltw = GameRenderer.getKnownRenderer(Renderers.LTW_RENDERER);
         boolean ltwSupported = ltw != null && ltw.compatibleDevice(activity);
-        // Block Sodium from running with GL4ES on 1.17+
-        if(!isCompatContext(versionInfo) && isGl4es && hasSodium(gamedir)) {
-            switchRendererIfSupported(ltwSupported, ltw, gameRenderer, instance, activity, R.string.compat_sodium_not_supported);
+
+        // Minecraft versions requiring the modern OpenGL path must not run GL4ES.
+        if(!isCompatContext(versionInfo)
+                && renderer instanceof GLESRenderSpec.GL4ESRenderSpec) {
+            switchRendererIfSupported(
+                    ltwSupported,
+                    ltw,
+                    gameRenderer,
+                    instance,
+                    activity,
+                    R.string.compat_version_not_supported
+            );
         }
 
-        // Switch renderer to LTW when running 1.21.5
-        if(!isGl4esCompatible(versionInfo) && isGl4es) {
-            switchRendererIfSupported(ltwSupported, ltw, gameRenderer, instance, activity, R.string.compat_sodium_not_supported);
+        // Legacy Minecraft versions cannot use LTW/OpenGL ES 3.
+        renderer = gameRenderer.getCurrentRenderer();
+        if(isCompatContext(versionInfo)
+                && !hasAngelica(gamedir)
+                && renderer instanceof GLESRenderSpec.LTWRenderSpec) {
+            switchRendererIfSupported(
+                    true,
+                    GameRenderer.getKnownRenderer(Renderers.GL4ES_RENDERER),
+                    gameRenderer,
+                    instance,
+                    activity,
+                    0
+            );
         }
 
+        // Re-read the renderer after any automatic version-based switch.
+        renderer = gameRenderer.getCurrentRenderer();
         boolean isLtw = renderer instanceof GLESRenderSpec.LTWRenderSpec;
 
         if(isLtw && checkRenderDistance(versionInfo, gamedir)) {

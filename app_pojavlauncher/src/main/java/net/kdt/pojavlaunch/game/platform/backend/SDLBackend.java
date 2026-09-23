@@ -48,9 +48,12 @@ public class SDLBackend implements PlatformBackend {
 
     @Override
     public void surfaceCreated(Surface surface) {
-        if (SDLActivity.getNativeSurface() != null) SDLActivity.onNativeSurfaceDestroyed();
-        SDLActivity.setNativeSurface(surface);
-        SDLActivity.onNativeSurfaceCreated();
+        if (SDLActivity.getNativeSurface() == null) {
+            SDLActivity.setNativeSurface(surface);
+            SDLActivity.onNativeSurfaceCreated();
+        } else {
+            SDLActivity.setNativeSurface(surface);
+        }
         this.surfaceUpdated(); // Update initial size
         SDLActivity.onNativeSurfaceChanged();
     }
