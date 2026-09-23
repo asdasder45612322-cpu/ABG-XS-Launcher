@@ -91,7 +91,7 @@ public class Platform {
     private static void onInit(PlatformBackend impl) {
         // We probably already initialized at this point. Don't try to initialize again
         Platform.setPlatformLibrary(impl);
-        Log.i("Platform", "Init backend : " + impl.backendName());
+        Log.i("Platform", "ABG-XS BACKEND SELECTED: " + impl.backendName() + " (" + impl.getClass().getSimpleName() + ")");
         ContextExecutor.executeActivity(activity -> ((GameActivity) activity).hideLoadingScreen());
         resetCursorPosition();
     }
